@@ -2,7 +2,6 @@
     Public konek As OleDb.OleDbConnection
     Public adapt As OleDb.OleDbDataAdapter
     Public ds As New DataSet
-    Public asd As ds1TableAdapters.UsersTableAdapter
 
     Sub connect()
         konek = New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=ttrak.db.mdb;Persist Security Info=False;")

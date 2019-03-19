@@ -139,11 +139,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Resources\ds1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ds1.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -177,29 +172,12 @@
     </None>
     <None Include="App.config" />
     <None Include="OJT_Track_TemporaryKey.pfx" />
-    <None Include="Resources\ds1.xsc">
-      <DependentUpon>ds1.xsd</DependentUpon>
-    </None>
-    <None Include="Resources\ds1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ds1.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Resources\ds1.xss">
-      <DependentUpon>ds1.xsd</DependentUpon>
-    </None>
-    <None Include="Resources\prog.docx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\10715_naruto.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hunter_x_hunter_gon_and_killua_wallpaper_by_tochter_des_hasses-d9cs1eg.png.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\ttrak.db.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
