@@ -3,10 +3,12 @@
     Dim strt, stp, strt1, many, logintime
     Dim prt As PrintControllerWithStatusDialog
     Dim aw As Drawing.Printing.PrintDocument
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
     End Sub
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         'Print(0)
         usr = Form1.logg
         modd.connect()
@@ -14,24 +16,34 @@
         adapt.Fill(ds, "Users")
         gru.DataSource = ds.Tables("Users")
         'prt.OnStartPage(
-        If gru.Item(9, 0).Value = "" Then
+        If gru.Item(9, 0).Value.ToString = "" Then
             ds.Clear()
-            adapt = New OleDb.OleDbDataAdapter("Update USers set lastAD = '" + Date.Now + "' where ID = " & usr.ToString, konek)
+            adapt = New OleDb.OleDbDataAdapter("Update Users set lastAD = '" + Date.Now + "' where ID = " & usr.ToString, konek)
             adapt.Fill(ds, "Users")
             ds.Clear()
             adapt = New OleDb.OleDbDataAdapter("Select * from Users where ID = " & usr.ToString, konek)
             adapt.Fill(ds, "Users")
             gru.DataSource = ds.Tables("Users")
         End If
-        If Date.Now.Year = DateAndTime.Year(gru.Item(9, 0).Value) Then
+        If Date.Now.Year - DateAndTime.Year(gru.Item(9, 0).Value) < 2 Then
 
             strt = Date.Now
             strt1 = strt
             Timer1.Start()
             logintime = TimeOfDay.ToShortTimeString
-            ds.Clear()
-            adapt = New OleDb.OleDbDataAdapter("Insert into Timez (timez" & usr.ToString & ") values('" & strt.ToString & "')", konek)
-            adapt.Fill(ds, "Timez")
+            Try
+                ds.Clear()
+                adapt = New OleDb.OleDbDataAdapter("Insert into Timez (timez" & usr.ToString & ") values('" & strt.ToString & "')", konek)
+                adapt.Fill(ds, "Timez")
+            Catch ex As Exception
+                ds.Clear()
+                adapt = New OleDb.OleDbDataAdapter("ALTER TABLE Timez Add timez" & usr.ToString & " Date", konek)
+                adapt.Fill(ds, "Timez")
+                ds.Clear()
+                adapt = New OleDb.OleDbDataAdapter("Insert into Timez (timez" & usr.ToString & ") values('" & strt.ToString & "')", konek)
+                adapt.Fill(ds, "Timez")
+            End Try
+
 
             ds.Clear()
             adapt = New OleDb.OleDbDataAdapter("Select * from Users where ID = " & usr.ToString, konek)
@@ -43,9 +55,12 @@
             Label15.Text = gru.Item(8, 0).Value
             Label16.Text = gru.Item(9, 0).Value
             many = gru.Item(6, 0).Value + 1
-            Label24.Text = many.ToString + " Times"
+            Label24.Text = many.ToString + " Time/s"
             Label10.Text = gru.Item(7, 0).Value
             Label9.Text = Val(Label8.Text) - Val(Label10.Text)
+            If Label17.Text = "0" Then
+                Label17.Text = "(Gain hours first to compute)"
+            End If
             Label17.Text = Val(Label10.Text) / 8 & " Days Left"
             adapt = New OleDb.OleDbDataAdapter("Update Users Set howmany = " + many.ToString + " where ID = " + usr.ToString, konek)
             adapt.Fill(ds, "Users")
@@ -95,7 +110,7 @@
             If MsgBoxResult.Ok Then
                 Timer1.Start()
                 ds.Clear()
-                adapt = New OleDb.OleDbDataAdapter("Update USers set lastAD ='" + strt + "' where ID = " & usr.ToString, konek)
+                adapt = New OleDb.OleDbDataAdapter("Update Users set lastAD ='" + strt + "' where ID = " & usr.ToString, konek)
                 adapt.Fill(ds, "Users")
                 End
             End If
@@ -124,5 +139,16 @@
         TextBox2.Enabled = False
         TextBox3.Enabled = False
         Button4.Enabled = False
+    End Sub
+    Private Sub OnDestroy(sender As Object, e As EventArgs) Handles MyBase.FormClosed
+        Try
+            Taposna()
+        Catch ex As Exception
+            Taposna()
+        End Try
+
+    End Sub
+    Sub Taposna()
+        End
     End Sub
 End Class

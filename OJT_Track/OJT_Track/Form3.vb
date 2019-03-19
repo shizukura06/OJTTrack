@@ -1,17 +1,23 @@
 ﻿Public Class Form3
     Dim usr As Integer
     Dim i As Integer
+    Dim mon As Integer
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         usr = Form1.logg
         modd.connect()
         ds.Clear()
         adapt = New OleDb.OleDbDataAdapter("Select timez" + usr.ToString + " from Timez", konek)
         adapt.Fill(ds, "Timez")
+        gru.Refresh()
         gru.DataSource = ds.Tables("Timez")
         i = 0
         While i <> gru.Rows.Count - 1
 
-            Dim mon = DateAndTime.Month(gru.Item(0, i).Value)
+            Try
+                mon = DateAndTime.Month(gru.Item(0, i).Value)
+            Catch ex As Exception
+
+            End Try
 
             If ListView1.Text.ToString.Contains("December") And mon = 12 Then
                 ListView1.Text = ListView1.Text & (gru.Item(0, i).Value.ToString) & vbCrLf

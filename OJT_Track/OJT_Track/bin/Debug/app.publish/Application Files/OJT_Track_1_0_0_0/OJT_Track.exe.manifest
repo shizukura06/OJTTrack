@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="OJT_Track.exe" version="1.0.0.0" publicKeyToken="2642fbbd8584ecd9" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="OJT_Track" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="OJT_Track.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OJT_Track.exe" size="781824">
+      <assemblyIdentity name="OJT_Track" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>X1aytVkVMIwiNtgMcf5neHd58dJ+xuNUsPobd6k76HU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="OJT_Track.exe.config" size="513">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>u/RIB9Cf4rQR4kBPIDCOewZmGR7cmfVlDUm+NtVdPXU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\ttrak.db.mdb" size="421888" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>B9WstFXVQkgNb72OH5ssMD78wwxubdJpfcCqVFnx9bY=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=SHIZUKURA06\Shizukura06" issuerKeyHash="f090bfc2b552b9c14dc30b4e1f311e65f2c10b0e" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>IdfpJzaslPK1wTWtDcXqlGznC3VW7iiOwtYOb+OawHI=</DigestValue></Reference></SignedInfo><SignatureValue>G0CkK3KQJyMZZAJoiFcAAFSVaeoO8f7bsDnJkLxIkoNc/v63izNiWa9zOSuFVAixc/2FJPP/EKdCK+g7sXV/unyeT3LN0O5YRwBPYYBDhke9dCz6msHB9hOYEyWt3NVaqdsr8vH0B8ENdhXCs0CBL6FSa3efveAU2RvaA3xNqpE=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>6ipQ7EC1pbXJaR8l7ki9n+hMQwBL3PfOk+R3AsuyexVXbB46iE1kWEY2MmtIUx5RWxNLaVn3ERJKSoxPjKe93YbNM9u1rxeavOLkIUqeE0dkYH0wxBn8cOw1WyD1tj0q2537jr6D9Wnb1LC1M0tnVeIDTXxlXrdbBTzUO4INfrk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="72c09ae36f0ed6c28e28ee56750be76c94eac50dad35c1b5f294ac3627e9d721" Description="" Url=""><as:assemblyIdentity name="OJT_Track.exe" version="1.0.0.0" publicKeyToken="2642fbbd8584ecd9" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SHIZUKURA06\Shizukura06</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>jECQ5l2WVoxINHP5VUKKhR58iwIAQlN4yvrExqVcFmw=</DigestValue></Reference></SignedInfo><SignatureValue>OCefe+fGCBXnbMv+h6R7o5TLr6YXuge2T4TIX9QQYgKZ3rD6YuXXzIY7OymRsxvCRR7AakH4wGYBcdcoQipNoupl5Tw81xwyxg5GyPESHyJIiFqZGOHegUXVkiLjDZBazx0h0W/ap8k/94hbsyeXSHE4ZH6DPiJzbZj10efo2XM=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>6ipQ7EC1pbXJaR8l7ki9n+hMQwBL3PfOk+R3AsuyexVXbB46iE1kWEY2MmtIUx5RWxNLaVn3ERJKSoxPjKe93YbNM9u1rxeavOLkIUqeE0dkYH0wxBn8cOw1WyD1tj0q2537jr6D9Wnb1LC1M0tnVeIDTXxlXrdbBTzUO4INfrk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB9TCCAV6gAwIBAgIQVBOTvQ3Rf6ZF+Cfh52xG3DANBgkqhkiG9w0BAQsFADA5MTcwNQYDVQQDHi4AUwBIAEkAWgBVAEsAVQBSAEEAMAA2AFwAUwBoAGkAegB1AGsAdQByAGEAMAA2MB4XDTE5MDMxOTEzMzgyOVoXDTIwMDMxODE5MzgyOVowOTE3MDUGA1UEAx4uAFMASABJAFoAVQBLAFUAUgBBADAANgBcAFMAaABpAHoAdQBrAHUAcgBhADAANjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA6ipQ7EC1pbXJaR8l7ki9n+hMQwBL3PfOk+R3AsuyexVXbB46iE1kWEY2MmtIUx5RWxNLaVn3ERJKSoxPjKe93YbNM9u1rxeavOLkIUqeE0dkYH0wxBn8cOw1WyD1tj0q2537jr6D9Wnb1LC1M0tnVeIDTXxlXrdbBTzUO4INfrkCAwEAATANBgkqhkiG9w0BAQsFAAOBgQCFsLR6cHpgaruJi4y2O5i+MqTn6KcThkiJnsKYnYqCLQtNlsQgVFHF/9/Ut1ZGmzg87hUpZP+JoJW3mIxZlRB8DhCN/9qySRPmWFipR/txpg5QVGP3seb0rXjXlU0oI+zxoxDNY8cChhDolspJaJ6VDkZp6rMkanMuCnSjEddcow==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
